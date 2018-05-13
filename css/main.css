@@ -1,0 +1,324 @@
+/* VARIABLES */
+:root{
+    --pad: 30px;
+    --rad: 2px;
+    --trans-time: 170ms;
+    --text-bkgrnd: #f8f9ff; /* #f1f1f1  #EFEEE8  #f8f9ff*/
+}
+
+/* cool classes */
+
+.no-text-select{
+    /* Text-selection */
+        -webkit-user-select: none; /* Safari */        
+        -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* IE10+/Edge */
+        user-select: none; /* Standard */
+}
+
+body{
+    font-family: 'Muli', sans-serif;
+    overflow: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* *********************** */
+/* HEADER */
+/* *********************** */
+header{
+    display: flex;
+    justify-content: space-between;
+    background: #37393A;
+    color: #f0f8ff;
+    /* grey blue #5299D3 */
+    /* dark green #558C8C */
+    /* purple #7B4B94 */
+    /* light blue #3ABEFF */
+    /* pink #D84797 */
+    height: 68px; /* need to specify the height here to get 100% for it's children... */
+}
+
+header img{
+    height: inherit;
+    position: relative;
+    bottom: 10px;
+}
+
+header .header-item{
+    box-sizing: border-box;
+    padding: 24px 15px 0 15px;
+    height: 100%;
+    white-space: nowrap;
+    text-align: center;
+    transition: var(--trans-time) background ease-out;
+}
+
+header .header-item:hover{
+    cursor: pointer;
+    background: rgb(81, 84, 85);
+}
+
+/* *********************** */
+/* ASSIGNMENT QUESTION */
+/* *********************** */
+
+#assignment-question{
+    min-width: 600px;
+    font-size: 1.2em;
+    box-sizing: border-box;
+    padding: 0;
+    /* z-index: 1; */
+}
+
+.the-question{
+    padding: 23px;
+    box-sizing: border-box;
+}
+
+.dropdown-content {
+    --space: 15%;
+    cursor: text;
+    /* display: none; */
+    color: black;
+    position: absolute;
+    /* max-width: 600px; */
+    top: 68px;
+    right: var(--space);
+    left: var(--space);
+    margin: 0 auto;
+    background-color: var(--text-bkgrnd); /* #f1f1f1 */
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    min-height: 300px;
+    padding: 0 5%;
+    border-radius: var(--rad);
+    /* -webkit-transition: opacity 600ms, visibility 600ms;
+    transition: opacity 600ms, visibility 600ms; */
+}
+
+.dropdown-content p {
+    font-size: 0.8em;
+    line-height: 2em;
+    text-align: justify;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    white-space: normal;
+}
+
+#due-date{
+    font-style: italic;
+}
+
+.dropdown-content h5{
+    margin-bottom: 0;
+    text-align: left;
+}
+
+/* end Assignment question */
+
+/* ------------------------- */
+
+/* Wrapper */
+.wrapper{
+    display: flex;
+    background: #E9EBF8;
+}
+
+/* *********************** */
+/* SIDEBAR */
+/* *********************** */
+.sidebar-wrapper{
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar{
+    background: #e4e7fa;
+    /* yellow #F9DF74 */
+    /* greyish #e4e7fa */
+    color: black;
+    height: 91.5vh; /* relative to height of header */
+    overflow-y: auto; /* this allows this area to be scrollable */
+    /* padding: var(--pad); */
+    border-right: 1px solid #0000001b;
+}
+
+.sidebar .box{
+    /* box-sizing: border-box; */
+    padding: 30px 0;
+    border-bottom: 1px solid #00000033;
+    width: 23vw;
+    min-width: 200px;
+    text-align: center;
+    transition: var(--trans-time) background ease-out;
+}
+
+#box-selected{
+    background: #fae386;
+    /* original color #F9DF74 #fae386 */
+    font-weight: 600;
+}
+
+.sidebar .box:hover{
+    cursor: pointer;
+    background: #cdd1e9;
+}
+
+.sidebar .box:first-of-type{
+    padding: 40px 0;
+    /* font-size: 1.2em; */
+}
+
+.sidebar .box:last-of-type{
+    border: none;
+}
+/* end sidebar */
+
+/* ------------------------- */
+
+
+/* *********************** */
+/* CONTENT */
+/* *********************** */
+.content{
+    /* background: #e9ebf8; */
+    padding: var(--pad);
+    width: 100vw;
+    margin: 10px 4%;
+    overflow: scroll;
+    height: 82vh; /* relative to height of header */
+
+}
+
+.content h3{ /* the actual words "Your answer:" */
+    margin-top: 0;
+    margin-left: 1px; /* account for the border of your-answer */
+}
+
+.your-answer{ /* refers to the text that follows "Your answer:" */
+    background: var(--text-bkgrnd);
+    border: 1px solid rgba(0, 0, 0, 0.473);
+    border-radius: var(--rad);
+    padding: 15px;
+    line-height: 2.3em;
+}
+
+.your-answer p{
+    padding: 0;
+    margin: 0;
+    margin-bottom: 1.3em;
+    font-family: 'Lato', sans-serif;
+}
+
+.your-answer p:last-of-type{
+    margin: 0;
+}
+
+/* *********************** */
+/* EDITING MODE & BUTTON */
+/* *********************** */
+
+.edit-btn{
+    box-sizing: border-box;
+    width: 100px;
+    height: 40px;;
+    background: #2AB7CA;
+    float: right;
+    border: 1px solid #00000033;
+    border-radius: calc(var(--rad) + 0px);
+    text-align: center;
+    padding-top: 10px;
+    margin-top: 10px;
+    margin-right: 7px;
+    transition: var(--trans-time) background ease-out;
+}
+
+.edit-btn:hover{
+    cursor: pointer;
+    background: rgb(0, 208, 255);
+    /* color: aliceblue; */
+}
+
+/* end editing mode & button */
+
+/* ------------------------- */
+
+
+
+
+/* *********************** */
+/* COMMENTS */
+/* *********************** */
+
+.comment{
+    background: #f8f9ff; /* #f1f1f1  #EFEEE8  #f8f9ff*/
+    padding: 10px;
+    border-radius: var(--rad);
+    border: 1px solid #00000033;
+    /* width: 90%; */
+    margin: auto;
+    display: flex;
+    /* justify-content: space-between; */
+    box-sizing: border-box;
+    box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.2);
+    position: relative;
+}
+
+.comment-user{
+    min-width: 100px;
+}
+
+.comment-user img{
+    max-width: 50px;
+    position: relative;
+    bottom: 10px;
+    margin-top: 10px;
+    display: block;
+}
+
+.comment-user p{
+    color: gray;
+    font-size: 0.5em;
+    margin: 0;
+    font-style: italic;
+}
+
+.comment-user p:first-of-type{
+    margin: 5px 0 0 0;
+}
+
+.comment-text{
+    text-align: left;
+    line-height: 1.5em;
+}
+
+.vote {
+    /* box-sizing: border-box; */
+    background: #F9DF74; /* #F9DF74 #fae386 */
+    border-radius: var(--rad);
+    width: 70px;
+    height: 15px;
+    padding: 3px;
+    text-align: center;
+    /* color: aliceblue; */
+    border: 1px solid #00000033;
+    font-size: 0.8em;
+    transition: var(--trans-time) background ease-out;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+.vote:hover{
+    cursor: pointer;
+    background: rgb(255, 234, 0);
+}
+
+.vote.on {
+    
+}
+
+#upvote-count{
+    margin-right: 5px;
+}

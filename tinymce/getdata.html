@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>get data - tinymce</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+</head>
+    <body>
+        <br>
+        <form method="post" id="get-data-form" action="insert.php">
+            <p>Title:</p>
+            <input type="text" name="title" required>
+            <br>
+            <br>
+            <p>Author:</p>
+            <input type="text" name="author" required>
+            <br>
+            <br>
+            <textarea class="tinymce" id="texteditor"></textarea>
+            <input type="submit" value="Get data" name="article_content" required>
+        </form>
+
+        <h1>Preview: </h1>
+
+        <div id="data-container"></div>
+
+        <!-- javascript -->
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+        <script type="text/javascript" src="plugins/tinymce/tinymce.min.js"></script>
+        <script type="text/javascript" src="plugins/tinymce/init-tinymce.js"></script>
+        <script type="text/javascript" src="js/getdata.js"></script>
+    </body>
+</html>

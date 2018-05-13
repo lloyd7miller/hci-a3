@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="lang=en-US">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Assignment 3</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- STYLESHEETS -->
+    <link rel="stylesheet" href="./css/normal.css">
+    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" href="./css/main.css" />
+</head>
+<body>
+    
+    <script src="./js/beginning.js"></script>
+    <!-- header in js file -->
+
+    <div class="wrapper">
+        <div class="sidebar-wrapper">
+            <div class="sidebar">
+                <div class="box" onclick="location.href='index.html'" id="box-selected">Your Answer</div>
+                <div class="box" onclick="location.href='molly.html'">Molly Peterson</div>
+                <div class="box" onclick="location.href='jane.html'">Jane Tudor</div>
+                <div class="box" onclick="location.href='mary.html'">Mary-Jane Velasco</div>
+                <div class="box">student</div>
+                <div class="box">student</div>
+                <div class="box">student</div>
+                <div class="box">student</div>
+                <div class="box">student</div>
+                <div class="box">student</div>
+                <div class="box">student</div>
+                <div class="box">student</div>
+                <div class="box">student</div>
+                <div class="box">student</div>
+                <div class="box">student</div>
+                <div class="box">student</div>
+            </div>
+        </div>
+        
+        <div class="content" id="fixed">
+
+            <h3>Your answer:</h3>
+            <div class="your-answer" style="display: block;">
+                <p>
+                    Lactic acid is an organic compound with the formula CH3CH(OH)COOH. In its solid state, it is white and water-soluble. In
+                    its liquid state, it is colorless. It is produced both naturally and synthetically. With a hydroxyl group adjacent to the
+                    carboxyl group, lactic acid is classified as an alpha-hydroxy acid (AHA). In the form of its conjugate base called lactate,
+                    it plays a role in several biochemical processes. In solution, it can ionize a proton from the carboxyl group, producing
+                    the lactate ion CH 3CH(OH)CO− 2. 
+                </p>
+                <p>
+                    Compared to acetic acid, its pKa is 1 unit less, meaning lactic acid deprotonates ten times
+                    more easily than acetic acid does. This higher acidity is the consequence of the intramolecular hydrogen bonding between
+                    the α-hydroxyl and the carboxylate group. Lactic acid is chiral, consisting of two optical isomers. One is known as L-(+)-lactic
+                    acid or (S)-lactic acid and the other, its mirror image, is D-(−)-lactic acid or (R)-lactic acid. A mixture of the two in
+                    equal amounts is called DL-lactic acid, or racemic lactic acid. Lactic acid is hygroscopic. DL-lactic acid is miscible with
+                    water and with ethanol above its melting point which is around 17 or 18 °C. D-lactic acid and L-lactic acid have a higher
+                    melting point.
+                </p>
+            </div>
+            <p id="warning" style="display: none; font-weight: 600; font-style: italic; color:red;">
+                * <u>Note for graders:</u> the editor is simply there for illustrative purposes, it does NOT save your work...
+            </p>
+            <div id="tinymce-div" style="display: none;">    
+                <textarea class="tinymce"></textarea>
+            </div>
+            <!-- <form>
+                <button type="button" onclick="this.form.timeField.value=getTimeStamp()">Get time stamp</button>
+                <input type="" name="timeField" size="11">
+            </form> -->
+            <div class="edit-btn" id="edit-btn" class="no-text-select" onclick="showEditor()">Edit</div>
+            <div class="edit-btn" id="cancel-btn" class="no-text-select" style="display: none; background: grey; color: rgb(240, 248, 255)">Cancel</div>
+            
+            <!-- javascript files for tiny mce -->
+            <script type="text/javascript" src="tinymce/js/jquery.min.js"></script>
+            <script type="text/javascript" src="tinymce/plugins/tinymce/tinymce.min.js"></script>
+            <script type="text/javascript" src="tinymce/plugins/tinymce/init-tinymce.js"></script>
+            <!-- ^^ javascript files for tiny mce -->
+
+            <br>
+            <br>
+            <br>
+            <br>
+            <div class="comment">
+                <div class="comment-user">
+                    <img src="./img/pic.png" alt="profile picture">
+                    Mary Jane Velasco
+                    <p>April 27th 2018</p>
+                    <p>9:39 AM</p>
+                </div>
+                <div class="comment-text">
+                    Cras sagittis eros in mi gravida egestas. Aenean molestie dolor turpis, ac finibus mi feugiat consectetur. Nullam dapibus, urna gravida faucibus efficitur, purus mi sodales urna, at molestie velit nisi blandit tortor. Vivamus vulputate porta nibh, non semper ligula luctus a. Aliquam vitae laoreet tellus. Proin a luctus libero.
+                </div>
+                <span class="vote" class="no-text-select">
+                    <span id="upvote-count">0</span>
+                    Upvote
+                </span>
+            </div>
+            <br>
+            <div class="comment">
+                <div class="comment-user">
+                    <img src="./img/pic.png" alt="profile picture"> 
+                    Jane Tudor
+                    <p>April 30th 2018</p>
+                    <p>6:22 PM</p>
+                </div>
+                <div class="comment-text">
+                    Cras sagittis eros in mi gravida egestas.
+                </div>
+                <span class="vote" class="no-text-select">
+                    <span id="upvote-count">0</span>
+                    Upvote
+                </span>
+            </div>
+            <br>
+            <div class="comment">
+                <div class="comment-user">
+                    <img src="./img/pic.png" alt="profile picture"> 
+                    Kyle Stoneberg
+                    <p>May 4th 2018</p>
+                    <p>3:09 PM</p>
+                </div>
+                <div class="comment-text">
+                    Cras sagittis eros in mi gravida egestas. Aenean molestie dolor turpis, ac finibus mi feugiat consectetur. Purus mi sodales urna, at molestie velit nisi blandit tortor. Vivamus vulputate porta nibh, non semper ligula luctus a. Aliquam vitae laoreet tellus. Proin a luctus libero.
+                </div>
+                <span class="vote" class="no-text-select">
+                    <span id="upvote-count">0</span>
+                    Upvote
+                </span>
+            </div>
+            <br>
+            <div class="comment">
+                <div class="comment-user">
+                    <img src="./img/pic.png" alt="profile picture"> 
+                    Kody Johnson
+                    <p>May 4th 2018</p>
+                    <p>4:49 PM</p>
+                </div>
+                <div class="comment-text">
+                    Cras sagittis eros in mi gravida egestas. Aenean molestie dolor turpis, ac finibus mi feugiat consectetur. 
+                </div>
+                <span class="vote" class="no-text-select">
+                    <span id="upvote-count">0</span>
+                    Upvote
+                </span>
+            </div>
+
+            <br>
+            <br>
+            
+        </div>
+    </div>
+</body>
+</html>
+
+<!-- SCRIPTS -->
+<script src="js/main.js"></script>
