@@ -1,19 +1,10 @@
 /* VARIABLES */
 :root{
+    --header-height: 60px;
     --pad: 30px;
     --rad: 2px;
     --trans-time: 170ms;
     --text-bkgrnd: #f8f9ff; /* #f1f1f1  #EFEEE8  #f8f9ff*/
-}
-
-/* cool classes */
-
-.no-text-select{
-    /* Text-selection */
-        -webkit-user-select: none; /* Safari */        
-        -moz-user-select: none; /* Firefox */
-        -ms-user-select: none; /* IE10+/Edge */
-        user-select: none; /* Standard */
 }
 
 body{
@@ -35,7 +26,7 @@ header{
     /* purple #7B4B94 */
     /* light blue #3ABEFF */
     /* pink #D84797 */
-    height: 68px; /* need to specify the height here to get 100% for it's children... */
+    height: var(--header-height); /* need to specify the height here to get 100% for it's children... */
 }
 
 header img{
@@ -46,7 +37,7 @@ header img{
 
 header .header-item{
     box-sizing: border-box;
-    padding: 24px 15px 0 15px;
+    padding: 20px 15px 0 15px;
     height: 100%;
     white-space: nowrap;
     text-align: center;
@@ -71,7 +62,7 @@ header .header-item:hover{
 }
 
 .the-question{
-    padding: 23px;
+    padding: 20px;
     box-sizing: border-box;
 }
 
@@ -82,7 +73,7 @@ header .header-item:hover{
     color: black;
     position: absolute;
     /* max-width: 600px; */
-    top: 68px;
+    top: var(--header-height);
     right: var(--space);
     left: var(--space);
     margin: 0 auto;
@@ -138,7 +129,7 @@ header .header-item:hover{
     /* yellow #F9DF74 */
     /* greyish #e4e7fa */
     color: black;
-    height: 91.5vh; /* relative to height of header */
+    height: calc(100vh - var(--header-height)); /* relative to height of header */
     overflow-y: auto; /* this allows this area to be scrollable */
     /* padding: var(--pad); */
     border-right: 1px solid #0000001b;
@@ -183,11 +174,11 @@ header .header-item:hover{
 /* *********************** */
 .content{
     /* background: #e9ebf8; */
-    padding: var(--pad);
+    padding: var(--pad) 6%;
     width: 100vw;
-    margin: 10px 4%;
+    /* margin: 10px 4%; */
     overflow: scroll;
-    height: 82vh; /* relative to height of header */
+    height: calc(100vh - var(--header-height)); /* relative to height of header */
 
 }
 
@@ -202,6 +193,8 @@ header .header-item:hover{
     border-radius: var(--rad);
     padding: 15px;
     line-height: 2.3em;
+    --mar-btm: 7px;
+    margin-bottom: 7px;
 }
 
 .your-answer p{
@@ -213,6 +206,14 @@ header .header-item:hover{
 
 .your-answer p:last-of-type{
     margin: 0;
+}
+
+.your-answer-timestamp{
+    /* float: right; */
+    color: gray;
+    font-size: 0.85em;
+    margin: 0;
+    font-style: italic;
 }
 
 /* *********************** */
@@ -229,9 +230,14 @@ header .header-item:hover{
     border-radius: calc(var(--rad) + 0px);
     text-align: center;
     padding-top: 10px;
-    margin-top: 10px;
+    margin-top: 4px;
     margin-right: 7px;
     transition: var(--trans-time) background ease-out;
+    /* Text-selection */
+        -webkit-user-select: none; /* Safari */        
+        -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* IE10+/Edge */
+        user-select: none; /* Standard */
 }
 
 .edit-btn:hover{
@@ -250,6 +256,13 @@ header .header-item:hover{
 /* *********************** */
 /* COMMENTS */
 /* *********************** */
+
+.comment-wrapper{
+    width: 100%;
+    /* background: red; */
+    position: relative;
+    padding-bottom: 40px;
+}
 
 .comment{
     background: #f8f9ff; /* #f1f1f1  #EFEEE8  #f8f9ff*/
@@ -293,32 +306,71 @@ header .header-item:hover{
     line-height: 1.5em;
 }
 
+/* VOTE */
+
 .vote {
     /* box-sizing: border-box; */
-    background: #F9DF74; /* #F9DF74 #fae386 */
+    background: #a9f0be; /* #F9DF74 #fae386  red #FE4A49  yellow #f4da74;*/
+    /* color: whitesmoke; */
     border-radius: var(--rad);
-    width: 70px;
-    height: 15px;
-    padding: 3px;
+    width: 65px;
+    height: 12px;
+    padding: 2px;
     text-align: center;
     /* color: aliceblue; */
+    border: 1px solid #00000033;
+    font-size: 0.7em;
+    transition: var(--trans-time) background ease-out;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+
+    /* Text-selection */
+        -webkit-user-select: none; /* Safari */        
+        -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* IE10+/Edge */
+        user-select: none; /* Standard */
+}
+
+.vote:hover{
+    cursor: pointer;
+    background: rgb(120, 230, 153); /* #FE4A49 */
+}
+
+.vote.on{
+    background: #2fec68;
+}
+
+.upvote-count{
+    margin-right: 5px;
+}
+
+/* REPLY */
+
+.reply {
+    /* box-sizing: border-box; */
+    background: rgb(244, 218, 116); /* #F9DF74 #fae386 */
+    border-radius: var(--rad);
+    width: 90px;
+    height: 15px;
+    padding: 3px;
+    margin-right: 5px;
+    text-align: center;
     border: 1px solid #00000033;
     font-size: 0.8em;
     transition: var(--trans-time) background ease-out;
     position: absolute;
     bottom: 10px;
     right: 10px;
+
+    /* Text-selection */
+        -webkit-user-select: none; /* Safari */        
+        -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* IE10+/Edge */
+        user-select: none; /* Standard */
 }
 
-.vote:hover{
+.reply:hover{
     cursor: pointer;
-    background: rgb(255, 234, 0);
-}
-
-.vote.on {
-    
-}
-
-#upvote-count{
-    margin-right: 5px;
+    background: rgb(255, 225, 0);
 }

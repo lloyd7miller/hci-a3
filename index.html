@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <link rel="stylesheet" href="./css/main.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
     
@@ -69,8 +70,9 @@
                 <button type="button" onclick="this.form.timeField.value=getTimeStamp()">Get time stamp</button>
                 <input type="" name="timeField" size="11">
             </form> -->
-            <div class="edit-btn" id="edit-btn" class="no-text-select" onclick="showEditor()">Edit</div>
-            <div class="edit-btn" id="cancel-btn" class="no-text-select" style="display: none; background: grey; color: rgb(240, 248, 255)">Cancel</div>
+            <span class="your-answer-timestamp">Edited: May 4th 2018 - 3:13PM</span>
+            <div class="edit-btn" id="edit-btn" onclick="showEditor()">Edit</div>
+            <div class="edit-btn" id="cancel-btn" style="display: none; background: grey; color: rgb(240, 248, 255)">Cancel</div>
             
             <!-- javascript files for tiny mce -->
             <script type="text/javascript" src="tinymce/js/jquery.min.js"></script>
@@ -82,70 +84,82 @@
             <br>
             <br>
             <br>
-            <div class="comment">
-                <div class="comment-user">
-                    <img src="./img/pic.png" alt="profile picture">
-                    Mary Jane Velasco
-                    <p>April 27th 2018</p>
-                    <p>9:39 AM</p>
+            <span id="test"></span>
+            <div class="comment-wrapper">
+                <div class="comment">
+                    <div class="comment-user">
+                        <img src="./img/pic.png" alt="profile picture">
+                        Mary Jane Velasco
+                        <p>April 27th 2018</p>
+                        <p>9:39 AM</p>
+                    </div>
+                    <div class="comment-text">
+                        Cras sagittis eros in mi gravida egestas. Aenean molestie dolor turpis, ac finibus mi feugiat consectetur. Nullam dapibus, urna gravida faucibus efficitur, purus mi sodales urna, at molestie velit nisi blandit tortor. Vivamus vulputate porta nibh, non semper ligula luctus a. Aliquam vitae laoreet tellus. Proin a luctus libero.
+                    </div>
+                    <span class="vote" class="no-text-select">
+                        <span class="upvote-count">2</span>
+                        Upvote
+                    </span>
                 </div>
-                <div class="comment-text">
-                    Cras sagittis eros in mi gravida egestas. Aenean molestie dolor turpis, ac finibus mi feugiat consectetur. Nullam dapibus, urna gravida faucibus efficitur, purus mi sodales urna, at molestie velit nisi blandit tortor. Vivamus vulputate porta nibh, non semper ligula luctus a. Aliquam vitae laoreet tellus. Proin a luctus libero.
-                </div>
-                <span class="vote" class="no-text-select">
-                    <span id="upvote-count">0</span>
-                    Upvote
-                </span>
+                <div class="reply">Reply</div>
             </div>
             <br>
-            <div class="comment">
-                <div class="comment-user">
-                    <img src="./img/pic.png" alt="profile picture"> 
-                    Jane Tudor
-                    <p>April 30th 2018</p>
-                    <p>6:22 PM</p>
+            <div class="comment-wrapper">
+                <div class="comment">
+                    <div class="comment-user">
+                        <img src="./img/pic.png" alt="profile picture"> 
+                        Jane Tudor
+                        <p>April 30th 2018</p>
+                        <p>6:22 PM</p>
+                    </div>
+                    <div class="comment-text">
+                        Cras sagittis eros in mi gravida egestas.
+                    </div>
+                    <span class="vote" class="no-text-select">
+                        <span class="upvote-count">1</span>
+                        Upvote
+                    </span>
                 </div>
-                <div class="comment-text">
-                    Cras sagittis eros in mi gravida egestas.
-                </div>
-                <span class="vote" class="no-text-select">
-                    <span id="upvote-count">0</span>
-                    Upvote
-                </span>
+                <div class="reply">Reply</div>
             </div>
             <br>
-            <div class="comment">
-                <div class="comment-user">
-                    <img src="./img/pic.png" alt="profile picture"> 
-                    Kyle Stoneberg
-                    <p>May 4th 2018</p>
-                    <p>3:09 PM</p>
+            <div class="comment-wrapper">
+                <div class="comment">
+                    <div class="comment-user">
+                        <img src="./img/pic.png" alt="profile picture"> 
+                        Kyle Stoneberg
+                        <p>May 4th 2018</p>
+                        <p>3:09 PM</p>
+                    </div>
+                    <div class="comment-text">
+                        Cras sagittis eros in mi gravida egestas. Aenean molestie dolor turpis, ac finibus mi feugiat consectetur. Purus mi sodales urna, at molestie velit nisi blandit tortor. Vivamus vulputate porta nibh, non semper ligula luctus a. Aliquam vitae laoreet tellus. Proin a luctus libero.
+                    </div>
+                    <span class="vote" class="no-text-select">
+                        <span class="upvote-count">3</span>
+                        Upvote
+                    </span>
                 </div>
-                <div class="comment-text">
-                    Cras sagittis eros in mi gravida egestas. Aenean molestie dolor turpis, ac finibus mi feugiat consectetur. Purus mi sodales urna, at molestie velit nisi blandit tortor. Vivamus vulputate porta nibh, non semper ligula luctus a. Aliquam vitae laoreet tellus. Proin a luctus libero.
-                </div>
-                <span class="vote" class="no-text-select">
-                    <span id="upvote-count">0</span>
-                    Upvote
-                </span>
+                <div class="reply">Reply</div>
             </div>
             <br>
-            <div class="comment">
-                <div class="comment-user">
-                    <img src="./img/pic.png" alt="profile picture"> 
-                    Kody Johnson
-                    <p>May 4th 2018</p>
-                    <p>4:49 PM</p>
+            <div class="comment-wrapper">
+                <div class="comment">
+                    <div class="comment-user">
+                        <img src="./img/pic.png" alt="profile picture"> 
+                        Kody Johnson
+                        <p>May 4th 2018</p>
+                        <p>4:49 PM</p>
+                    </div>
+                    <div class="comment-text">
+                        Cras sagittis eros in mi gravida egestas. Aenean molestie dolor turpis, ac finibus mi feugiat consectetur. 
+                    </div>
+                    <span class="vote" class="no-text-select">
+                        <span class="upvote-count">5</span>
+                        Upvote
+                    </span>
                 </div>
-                <div class="comment-text">
-                    Cras sagittis eros in mi gravida egestas. Aenean molestie dolor turpis, ac finibus mi feugiat consectetur. 
-                </div>
-                <span class="vote" class="no-text-select">
-                    <span id="upvote-count">0</span>
-                    Upvote
-                </span>
+                <div class="reply">Reply</div>
             </div>
-
             <br>
             <br>
             

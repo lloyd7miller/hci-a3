@@ -71,7 +71,37 @@ function collapseExpand() {
 // SOURCE: https://stackoverflow.com/questions/4274489/how-can-i-make-an-upvote-downvote-button
 for (const btn of document.querySelectorAll('.vote')) {
     btn.addEventListener('click', event => {
+// END SOURCE
+        var countElement = btn.children[0];
+        var currentCount = Number(countElement.textContent);
+        var x = false;
+        // scan through the classlist of btn and check for "on"
+        for (let i = 0; i < btn.classList.length; i++) {
+            if (btn.classList[i] === 'on') {
+                x = true
+            }
+        }
+
+        if (x === true) {
+            countElement.innerHTML = (currentCount - 1).toString();
+        }else{
+            countElement.innerHTML = (currentCount + 1).toString();
+        }
         event.target.classList.toggle('on');
     });
 }
-// END SOURCE
+
+
+// function upvote(element){
+//     var countElement = element.children[0];
+//     var currentCount = Number(countElement.textContent);
+//     alert("hello");
+    
+//     if (element.hasClass("on")) {
+//         countElement.innerHTML = (currentCount + 1).toString();
+//     }else{
+//         countElement.innerHTML = (currentCount - 1).toString();
+//         countElement.classList.add("on");
+//     }
+
+// }
