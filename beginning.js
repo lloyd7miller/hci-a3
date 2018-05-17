@@ -33,4 +33,8 @@ document.write('\
     \
     <div class="header-item" onclick="location.href=\'#\'">Kody Johnson</div>\
 </header>\
+\
+<div id="messenger">\
+    <img src="./img/group-msg.png" alt="messenger" id="messenger-img">\
+</div>\
 ');

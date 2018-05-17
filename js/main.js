@@ -105,3 +105,16 @@ for (const btn of document.querySelectorAll('.vote')) {
 //     }
 
 // }
+
+
+// SOURCE: https://github.com/google/material-design-lite/issues/5030
+var dialog = document.getElementById('messenger-img');
+dialog.showModal();
+dialog.addEventListener('click', function (event) {
+    var rect = dialog.getBoundingClientRect();
+    var isInDialog = (rect.top <= event.clientY && event.clientY <= rect.top + rect.height && rect.left <= event.clientX && event.clientX <= rect.left + rect.width);
+    if (!isInDialog) {
+        dialog.close();
+    }
+});
+// END SOURCE
