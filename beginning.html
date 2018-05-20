@@ -1,9 +1,10 @@
 <header>
-    <div class="header-item" onclick="location.href='#'">
+    <div class="header-item" onclick="location.href='#lightbox'">
         <img src="img/msg.png" alt="messenger">
     </div>
     <div class="header-item" id="assignment-question">
-        <div class="the-question" onclick="collapseExpand()">
+        <div class="the-question" onclick="collapseExpand();rotate();">
+            <i id="arrow" class="down"></i>
             What is the role of lactic acid in physical exercise?
         </div>
         <!-- <button onclick="myFunction()" class="dropbtn">Dropdown</button> -->
@@ -33,6 +34,7 @@
     <div class="header-item" onclick="location.href='#'">Kody Johnson</div>
 </header>
 
-<div id="messenger">
-    <img src="./img/group-msg.png" alt="messenger" id="messenger-img">
+<div id="lightbox" onclick="location.href='#'">
+    <img src="./img/group-msg.png" alt="messenger" onclick="location.href='#lightbox'" id="messenger-img">
+    <p>This is a sample of what the messenger would look like. Click anywhere to close this popup.</p>
 </div>

@@ -4,7 +4,8 @@
     --pad: 30px;
     --rad: 2px;
     --trans-time: 170ms;
-    --text-bkgrnd: #f8f9ff; /* #f1f1f1  #EFEEE8  #f8f9ff*/
+    --text-bkgrnd: #fffefe; /* #f1f1f1  #EFEEE8  #f8f9ff*/
+    --btn-border-clr: #00000033;
 }
 
 @import url('https://fonts.googleapis.com/css?family=Muli:400,900,800,700,600,500,300,200,100');
@@ -51,6 +52,29 @@ header .header-item:hover{
     cursor: pointer;
     background: rgb(81, 84, 85);
 }
+
+/* SOURCE: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_arrows */
+
+i {
+  border: solid #f0f8ff;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  margin-right: 15px;
+  margin-bottom: 4.5px;
+  transition: all 0.4s ease;
+}
+
+.down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+
+i.up {
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+}
+/* End source */
 
 /* *********************** */
 /* ASSIGNMENT QUESTION */
@@ -117,30 +141,52 @@ header .header-item:hover{
 /* *********************** */
 /* MESSENGER */
 /* *********************** */
-#messenger{
-    /* width: 100vw; */
-    background: red;
+#lightbox{
+    position: fixed;
+    z-index: 99;
+    width: 100%;
+	height: 100%;
+    background: rgba(0, 0, 0, 0.432);
+    visibility: hidden;
+    text-align: center;
+    top: 0;
+	left: 0;
 }
 
-#messenger img{
-    visibility: hidden;
+#lightbox:target{
+    visibility: visible;
+}
+
+#lightbox img{
     position: absolute;
-    z-index: 3;
     width: 30%;
     height: auto;
     left: calc(50% - 15%);
-    top: 10%;
+    top: 8vh;
     border-radius: var(--rad);
     border: 1px solid rgba(0, 0, 0, 0.473);
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
 
+#lightbox p{
+    z-index: 999;
+    line-height: 1.5em;
+    padding: 10px 0;
+    font-weight: 900;
+    color: rgb(240, 240, 240);
+    top: 40vh;
+    width: 30.1%;
+    height: auto;
+    left: calc(50% - 15%);
+    position: absolute;
+    background: rgba(0, 0, 0, 0.687);
+}
 
 
 /* Wrapper */
 .wrapper{
     display: flex;
-    background: #E9EBF8;
+    background: #e9ebee; /* E9EBF8 */
 }
 
 /* *********************** */
@@ -152,7 +198,7 @@ header .header-item:hover{
 }
 
 .sidebar{
-    background: #e4e7fa;
+    background: #dce0e6;
     /* yellow #F9DF74 */
     /* greyish #e4e7fa */
     color: black;
@@ -165,8 +211,8 @@ header .header-item:hover{
 .sidebar .box{
     /* box-sizing: border-box; */
     padding: 30px 0;
-    border-bottom: 1px solid #00000033;
-    width: 23vw;
+    border-bottom: 1px solid var(--btn-border-clr);
+    width: 18vw;
     min-width: 200px;
     text-align: center;
     transition: var(--trans-time) background ease-out;
@@ -180,12 +226,12 @@ header .header-item:hover{
 
 .sidebar .box:hover{
     cursor: pointer;
-    background: #cdd1e9;
+    background: #e2dcc8; /* cdd1e9 */
 }
 
 .sidebar .box:first-of-type{
-    padding: 40px 0;
-    /* font-size: 1.2em; */
+    padding: 50px 0;
+    font-size: 1.2em;
 }
 
 .sidebar .box:last-of-type{
@@ -201,7 +247,7 @@ header .header-item:hover{
 /* *********************** */
 .content{
     /* background: #e9ebf8; */
-    padding: var(--pad) 6%;
+    padding: var(--pad) 10%;
     width: 100vw;
     /* margin: 10px 4%; */
     overflow: scroll;
@@ -253,7 +299,7 @@ header .header-item:hover{
     height: 40px;;
     background: #2AB7CA;
     float: right;
-    border: 1px solid #00000033;
+    border: 1px solid var(--btn-border-clr);
     border-radius: calc(var(--rad) + 0px);
     text-align: center;
     padding-top: 10px;
@@ -292,10 +338,10 @@ header .header-item:hover{
 }
 
 .comment{
-    background: #f8f9ff; /* #f1f1f1  #EFEEE8  #f8f9ff*/
+    background: #f1f1f1; /* #f1f1f1  #EFEEE8  #f8f9ff*/
     padding: 10px;
     border-radius: var(--rad);
-    border: 1px solid #00000033;
+    border: 1px solid var(--btn-border-clr);
     /* width: 90%; */
     margin: auto;
     display: flex;
@@ -346,7 +392,7 @@ header .header-item:hover{
     padding: 2px;
     text-align: center;
     /* color: aliceblue; */
-    border: 1px solid #00000033;
+    border: 1px solid var(--btn-border-clr);
     font-size: 0.7em;
     transition: var(--trans-time) background ease-out;
     /* transition: font-weight var(--trans-time) linear; */
@@ -392,7 +438,7 @@ header .header-item:hover{
     padding: 3px;
     margin-right: 5px;
     text-align: center;
-    border: 1px solid #00000033;
+    border: 1px solid var(--btn-border-clr);
     font-size: 0.8em;
     transition: var(--trans-time) background ease-out;
     position: absolute;

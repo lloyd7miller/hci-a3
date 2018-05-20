@@ -48,26 +48,6 @@ function collapseExpand() {
         
 }
 
-//not working.....
-// var dropdown = document.getElementById("myDropdown");
-// dropdown.addEventListener("focusout", collapse);
-
-// function collapse() {
-//     dropdown.style.display = "none";
-//     alert("hello");
-// }
-
-// Close the dropdown if the user clicks outside of it
-// window.onclick = function (event) {
-//     if (!event.target.matches('.dropbtn')) {
-//         var dropdown = document.getElementsById("myDropdown");
-//         dropdown.style.display = "none";
-//     }
-// }
-
-// END SOURCE
-
-
 // SOURCE: https://stackoverflow.com/questions/4274489/how-can-i-make-an-upvote-downvote-button
 for (const btn of document.querySelectorAll('.vote')) {
     btn.addEventListener('click', event => {
@@ -91,30 +71,16 @@ for (const btn of document.querySelectorAll('.vote')) {
     });
 }
 
-
-// function upvote(element){
-//     var countElement = element.children[0];
-//     var currentCount = Number(countElement.textContent);
-//     alert("hello");
-    
-//     if (element.hasClass("on")) {
-//         countElement.innerHTML = (currentCount + 1).toString();
-//     }else{
-//         countElement.innerHTML = (currentCount - 1).toString();
-//         countElement.classList.add("on");
-//     }
-
-// }
-
-
-// SOURCE: https://github.com/google/material-design-lite/issues/5030
-var dialog = document.getElementById('messenger-img');
-dialog.showModal();
-dialog.addEventListener('click', function (event) {
-    var rect = dialog.getBoundingClientRect();
-    var isInDialog = (rect.top <= event.clientY && event.clientY <= rect.top + rect.height && rect.left <= event.clientX && event.clientX <= rect.left + rect.width);
-    if (!isInDialog) {
-        dialog.close();
+function rotate() {
+    var elem = document.getElementById("arrow");
+    // scan through the classlist
+    for (let i = 0; i < elem.classList.length; i++) {
+        if (elem.classList[i] === 'down' ) {
+            elem.classList.add("up");
+            elem.classList.remove("down");
+        }else{
+            elem.classList.add("down");
+            elem.classList.remove("up");
+        }
     }
-});
-// END SOURCE
+}

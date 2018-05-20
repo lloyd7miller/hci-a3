@@ -9,9 +9,9 @@
     <!-- STYLESHEETS -->
     <link rel="stylesheet" href="./css/normal.css">
     <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <link rel="stylesheet" href="./css/main.css" />
-    <!-- SCRIPTS -->
-    <script src="main.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -40,9 +40,62 @@
             </div>
         </div>
         <div class="content">
-            this is the main content
+            <h3>Mary's answer:</h3>
+            <div class="your-answer" style="display: block;">
+                <p>
+                    Lactic acid is an organic compound with the formula CH3CH(OH)COOH. In its solid state, it is white and water-soluble. In
+                    its liquid state, it is colorless. It is produced both naturally and synthetically. With a hydroxyl group adjacent
+                    to the carboxyl
+                </p>
+            </div>
+            <p id="warning" style="display: none; font-weight: 600; font-style: italic; color:red;">
+                *
+                <u>Note for graders:</u> the editor is simply there for illustrative purposes, it does NOT save your work...
+            </p>
+            <div id="tinymce-div" style="display: none;">
+                <textarea class="tinymce"></textarea>
+            </div>
+            <!-- <form>
+                                        <button type="button" onclick="this.form.timeField.value=getTimeStamp()">Get time stamp</button>
+                                        <input type="" name="timeField" size="11">
+                                    </form> -->
+            <span class="your-answer-timestamp">Edited: May 4th 2018 - 3:13PM</span>
+            
+            <!-- javascript files for tiny mce -->
+            <script type="text/javascript" src="tinymce/js/jquery.min.js"></script>
+            <script type="text/javascript" src="tinymce/plugins/tinymce/tinymce.min.js"></script>
+            <script type="text/javascript" src="tinymce/plugins/tinymce/init-tinymce.js"></script>
+            <!-- ^^ javascript files for tiny mce -->
+            
+            <br>
+            <br>
+            <br>
+            <br>
+            <span id="test"></span>
+            <div class="comment-wrapper">
+                <div class="comment">
+                    <div class="comment-user">
+                        <img src="./img/molly.png" alt="profile picture"> Molly Peterson
+                        <p>April 30th 2018</p>
+                        <p>3:09 AM</p>
+                    </div>
+                    <div class="comment-text">
+                        You should talk about how the chemical composition of lactic acid influences the flow of blood to the specific muscle
+                    </div>
+                    <span class="vote" class="no-text-select">
+                        <span class="upvote-count">2</span>
+                        Upvote
+                    </span>
+                </div>
+                <div class="reply">Reply</div>
+            </div>
+            <br>
+            <br>
         </div>
     </div>
 </body>
 
 </html>
+
+<!-- SCRIPTS -->
+<script src="js/main.js"></script>

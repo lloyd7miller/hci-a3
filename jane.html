@@ -9,9 +9,9 @@
     <!-- STYLESHEETS -->
     <link rel="stylesheet" href="./css/normal.css">
     <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <link rel="stylesheet" href="./css/main.css" />
-    <!-- SCRIPTS -->
-    <script src="main.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -40,9 +40,65 @@
             </div>
         </div>
         <div class="content">
-            this is the main content
+            <h3>Jane's answer:</h3>
+            <div class="your-answer" style="display: block;">
+                <p>
+                    Compared to acetic acid, its pKa is 1 unit less, meaning lactic acid deprotonates ten times more easily than acetic acid
+                    does. This higher acidity is the consequence of the intramolecular hydrogen bonding between the α-hydroxyl and the
+                    carboxylate group. Lactic acid is chiral, consisting of two optical isomers. One is known as L-(+)-lactic acid or
+                    (S)-lactic acid and the other, its mirror image, is D-(−)-lactic acid or (R)-lactic acid. A mixture of the two in
+                    equal amounts is called DL-lactic acid, or racemic lactic acid. Lactic acid is hygroscopic. DL-lactic acid is miscible
+                    with water and with ethanol above its melting point which is around 17 or 18 °C. D-lactic acid and L-lactic acid
+                    have a higher melting point.
+                </p>
+            </div>
+            <p id="warning" style="display: none; font-weight: 600; font-style: italic; color:red;">
+                *
+                <u>Note for graders:</u> the editor is simply there for illustrative purposes, it does NOT save your work...
+            </p>
+            <div id="tinymce-div" style="display: none;">
+                <textarea class="tinymce"></textarea>
+            </div>
+            <!-- <form>
+                            <button type="button" onclick="this.form.timeField.value=getTimeStamp()">Get time stamp</button>
+                            <input type="" name="timeField" size="11">
+                        </form> -->
+            <span class="your-answer-timestamp">Edited: May 4th 2018 - 3:13PM</span>
+            
+            <!-- javascript files for tiny mce -->
+            <script type="text/javascript" src="tinymce/js/jquery.min.js"></script>
+            <script type="text/javascript" src="tinymce/plugins/tinymce/tinymce.min.js"></script>
+            <script type="text/javascript" src="tinymce/plugins/tinymce/init-tinymce.js"></script>
+            <!-- ^^ javascript files for tiny mce -->
+            
+            <br>
+            <br>
+            <br>
+            <br>
+            <span id="test"></span>
+            <div class="comment-wrapper">
+                <div class="comment">
+                    <div class="comment-user">
+                        <img src="./img/kody.png" alt="profile picture"> Kody Johnson
+                        <p>April 30th 2018</p>
+                        <p>6:22 PM</p>
+                    </div>
+                    <div class="comment-text">
+                        Great stuff keep it up! Just one small thing, check your spelling!
+                    </div>
+                    <span class="vote" class="no-text-select">
+                        <span class="upvote-count">1</span>
+                        Upvote
+                    </span>
+                </div>
+                <div class="reply">Reply</div>
+            </div>
+            <br>
+            <br>
         </div>
     </div>
 </body>
 
 </html>
+<!-- SCRIPTS -->
+<script src="js/main.js"></script>
